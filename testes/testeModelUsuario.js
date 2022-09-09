@@ -6,3 +6,13 @@ Usuario.findAll().then(
         sequelize.close();
     }
 )
+
+Usuario.create(
+  {
+   nome: "edson",
+   email: "edson@ibm",
+   senha: "aleatoria3"
+
+  }
+     
+)

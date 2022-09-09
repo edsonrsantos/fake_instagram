@@ -6,3 +6,14 @@ Post.findAll().then(
         sequelize.close();
     }
 )
+
+Post.create(
+ {
+  texto: "Edson",
+  img: "erer",
+  usuarios_id: 1,
+  n_likes: 1
+ }
+)
+
+
