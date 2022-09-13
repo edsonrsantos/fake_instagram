@@ -38,7 +38,7 @@ module.exports = (sequelize, DataTypes) => {
   
    post.associate = (models) => {
       post.hasMany(models.Comentario,{foreignKey:'posts_id', as:'comentarios'}), //post.hasMany => 1 post tem muitos comentários
-      post.belongsTo(models.Usuario,{foreignKey:'usuarios_id', as:'usuario'}) // post.belongs => um post pertence a um usuario 
+      post.belongsTo(models.Usuario,{foreignKey:'usuarios_id', as:'usuario'}) // post.belongsTo => um post pertence a um usuario 
   }
    return post
 }

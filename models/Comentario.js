@@ -28,8 +28,8 @@ module.exports = (sequelize, DataTypes) => {
     }
  )
     comentario.associate = (models) => {  // comentario.belongsTo => comentário pertence a um post 
-         comentario.belongsTo(models.Post, {foreignKey:'posts_id', as:'post'})
-         comentario.belongsTo(models.Usuario, {foreignKey:'usuarios_id', as:'usuario'})
+         comentario.belongsTo(models.Post, {foreignKey:'posts_id', as:'post'})          // belongsTo => 1 comentário pertece a 1 post
+         comentario.belongsTo(models.Usuario, {foreignKey:'usuarios_id', as:'usuario'}) // belongsTo => 1 comentário pertece a 1 usuário
 
     }
       return comentario
