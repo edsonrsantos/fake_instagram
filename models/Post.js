@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-   return sequelize.define(
+  
+  let post = sequelize.define(
     'Post',
      {
       id:{
@@ -29,4 +30,16 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: false
     }
    )
+
+   //próximo passo fazer relacionamento 1 pra muitos
+   //um post tem muitos comentários 
+   //e um comentário pertence a um post.
+   //relacionamento de 1 pra muitos.
+  
+   post.associate = (models) => {
+      post.hasMany(models.Comentario,{foreignKey:'posts_id', as:'comentarios'}), //post.hasMany => 1 post tem muitos comentários
+      post.belongsTo(models.Usuario,{foreignKey:'usuarios_id', as:'usuario'}) // post.belongs => um post pertence a um usuario 
+  }
+   return post
 }
+
